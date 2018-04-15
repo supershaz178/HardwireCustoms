@@ -18,7 +18,7 @@ import com.hrdwire.persistence.reference.RoleReference;
 
 @Embeddable
 @MappedSuperclass
-public class Person implements Serializable {
+public abstract class Person implements Serializable {
 
 	private static final long serialVersionUID = -7747668742245137756L;
 	

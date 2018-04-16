@@ -3,19 +3,45 @@
  */
 package com.hrdwire.persistence;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author Shahroz
  *
  */
+@Entity
+@Table(name="FANS")
 public class Fans extends Parts
 {
 
 	private static final long serialVersionUID = 312404231999136519L;
+	
+	@Id
+	@Column(name="ID", nullable=false)
+	private Integer Id; 
+	
+	@Column(name="FAN_RADIUS", nullable=false)
 	private Integer fanRadius;
+	
+	@Column(name="FAN_SPEED", nullable=false, length=6)
 	private Integer fanSpeed;
-	private String color;
+	
+	@Column(name="FAN_COLOR")
+	private String fanColor;
+	
+	@Column(name="BASE_COLOR")
+	private String baseColor;
+	
+	@Column(name="PWR_REQ")
 	private Double powerRequired;
+	
+	@Column(name="AIR_FLOW")
 	private Double airFlow;
+	
+	@Column(name="FAN_TYPE", nullable=false)
 	private String fanType;
 
 	// Fan Type Constants
@@ -40,16 +66,6 @@ public class Fans extends Parts
 	public void setFanSpeed(Integer fanSpeed)
 	{
 		this.fanSpeed = fanSpeed;
-	}
-
-	public String getColor()
-	{
-		return color;
-	}
-
-	public void setColor(String color)
-	{
-		this.color = color;
 	}
 
 	public Double getPowerRequired()
@@ -80,6 +96,36 @@ public class Fans extends Parts
 	public void setFanType(String fanType)
 	{
 		this.fanType = fanType;
+	}
+
+	public Integer getId()
+	{
+		return Id;
+	}
+
+	public void setId(Integer id)
+	{
+		Id = id;
+	}
+
+	public String getFanColor()
+	{
+		return fanColor;
+	}
+
+	public void setFanColor(String fanColor)
+	{
+		this.fanColor = fanColor;
+	}
+
+	public String getBaseColor()
+	{
+		return baseColor;
+	}
+
+	public void setBaseColor(String baseColor)
+	{
+		this.baseColor = baseColor;
 	}
 
 }

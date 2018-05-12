@@ -48,8 +48,7 @@ public class BuildDAOImpl implements BuildDao
 	@Override
 	public Session getSession()
 	{
-		sessionFactory.getCurrentSession(); 
-		return null;
+		return sessionFactory.getCurrentSession();
 	}
 
 }

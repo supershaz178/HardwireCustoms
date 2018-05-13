@@ -55,12 +55,7 @@ public class BuildDAOImpl implements BuildDao
 	}
 
 	@Override
-	public Session getSession()
-	{
-		return sessionFactory.getCurrentSession();
-	}
-
-	@Override
+	@Transactional
 	public List<Build> searchByCustomer(Customer customer)
 	{
 		List<Build> buildsByCustomer = null; 
@@ -73,6 +68,7 @@ public class BuildDAOImpl implements BuildDao
 	}
 
 	@Override
+	@Transactional
 	public List<Build> searchByPatialBuildName(String partialName)
 	{
 		List<Build> buildsByPartialName = null; 
@@ -85,45 +81,86 @@ public class BuildDAOImpl implements BuildDao
 	}
 
 	@Override
+	@Transactional
 	public List<Build> searchByPartId(Integer partId)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		List<Build> buildByPart = null; 
+		Criteria cr = getSession().createCriteria(Build.class); 
+		
+		cr.add(Restrictions.eq("parts", partId));
+		buildByPart = cr.list(); 
+		
+		return buildByPart;
 	}
 
 	@Override
+	@Transactional
 	public Build selectBySerialNumber(Integer serialNumber)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Build buildBySerialNum = null; 
+		Criteria cr = getSession().createCriteria(Build.class);
+		
+		cr.add(Restrictions.eq("serialNum", serialNumber)); 
+		buildBySerialNum = (Build) cr.uniqueResult();
+		
+		return buildBySerialNum;
 	}
 
 	@Override
+	@Transactional
 	public Build selectByFullName(String fullBuildName)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Build buildsByFullName = null; 
+		Criteria cr = getSession().createCriteria(Build.class); 
+		cr.add(Restrictions.eq("buildName", fullBuildName));
+		
+		buildsByFullName = (Build) cr.uniqueResult(); 
+		
+		return buildsByFullName;
 	}
 
 	@Override
+	@Transactional
 	public Build selectByTotalCost(Double totalCost)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Build buildsByTotalCost = null; 
+		Criteria cr = getSession().createCriteria(Build.class); 
+		cr.add(Restrictions.eq("buildName", totalCost));
+		
+		buildsByTotalCost = (Build) cr.uniqueResult(); 
+		
+		return buildsByTotalCost;
 	}
 
 	@Override
+	@Transactional
 	public List<Build> searchByBuildType(String buildType)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		List<Build> buildByBuildType = null; 
+		Criteria cr = getSession().createCriteria(Build.class); 
+		
+		cr.add(Restrictions.eq("parts", buildType));
+		buildByBuildType = cr.list(); 
+		
+		return buildByBuildType;
 	}
 
 	@Override
+	@Transactional
 	public List<Build> searchByStatus(String buildStatus)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		List<Build> buildByBuildStatus = null; 
+		Criteria cr = getSession().createCriteria(Build.class); 
+		
+		cr.add(Restrictions.eq("parts", buildStatus));
+		buildByBuildStatus = cr.list(); 
+		
+		return buildByBuildStatus;
 	}
 
+	@Override
+	public Session getSession()
+	{
+		return sessionFactory.getCurrentSession();
+	}
 }

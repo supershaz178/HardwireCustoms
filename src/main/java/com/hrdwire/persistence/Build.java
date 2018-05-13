@@ -43,7 +43,7 @@ public class Build implements Serializable
 	private List<Parts> parts;
 
 	@Column(name = "STATUS", nullable = false)
-	private char status;
+	private String status;
 
 	@Column(name = "SERIAL_NUM", nullable = false)
 	private Integer serialNum;
@@ -106,12 +106,12 @@ public class Build implements Serializable
 		this.buildType = buildType;
 	}
 
-	public char getStatus()
+	public String getStatus()
 	{
 		return status;
 	}
 
-	public void setStatus(char status)
+	public void setStatus(String status)
 	{
 		this.status = status;
 	}

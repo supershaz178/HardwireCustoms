@@ -34,4 +34,6 @@ public interface BuildDao extends BaseDao<Build>
 	public Build selectByTotalCost(Double totalCost);
 	
 	public List<Build> searchByBuildType(String buildType);
+	
+	public List<Build> searchByStatus(String buildStatus); 
 }

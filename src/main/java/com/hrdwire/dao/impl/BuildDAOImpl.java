@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -62,7 +63,7 @@ public class BuildDAOImpl implements BuildDao
 	@Override
 	public List<Build> searchByCustomer(Customer customer)
 	{
-		List buildsByCustomer = null; 
+		List<Build> buildsByCustomer = null; 
 		Criteria cr = getSession().createCriteria(Build.class); 
 		cr.add(Restrictions.eq("customer", customer)); 
 		
@@ -74,8 +75,13 @@ public class BuildDAOImpl implements BuildDao
 	@Override
 	public List<Build> searchByPatialBuildName(String partialName)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		List<Build> buildsByPartialName = null; 
+		Criteria cr = getSession().createCriteria(Build.class); 
+		cr.add(Restrictions.ilike("buildName", partialName, MatchMode.ANYWHERE));
+		
+		buildsByPartialName = cr.list(); 
+		
+		return buildsByPartialName;
 	}
 
 	@Override
@@ -108,6 +114,13 @@ public class BuildDAOImpl implements BuildDao
 
 	@Override
 	public List<Build> searchByBuildType(String buildType)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Build> searchByStatus(String buildStatus)
 	{
 		// TODO Auto-generated method stub
 		return null;

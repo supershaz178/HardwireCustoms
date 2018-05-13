@@ -37,7 +37,7 @@ public class Build implements Serializable
 	private Customer customer;
 
 	@Column(name = "BUILD_TYPE")
-	private Integer buildType;
+	private String buildType;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "PARTS")
 	private List<Parts> parts;
@@ -96,12 +96,12 @@ public class Build implements Serializable
 		this.customer = customer;
 	}
 
-	public Integer getBuildType()
+	public String getBuildType()
 	{
 		return buildType;
 	}
 
-	public void setBuildType(Integer buildType)
+	public void setBuildType(String buildType)
 	{
 		this.buildType = buildType;
 	}

@@ -6,20 +6,7 @@ import com.hrdwire.persistence.Build;
 import com.hrdwire.persistence.Customer;
 
 public interface BuildDao extends BaseDao<Build>
-{
-	//Base Dao methods 
-	@Override
-	public void create(Build build); 
-	
-	@Override
-	public void update(Build build); 
-
-	@Override
-	public void delete(Build build); 
-
-	@Override
-	public Build selectById(Integer id); 
-	
+{	
 	//Build BO Specific 
 	public List<Build> searchByCustomer(Customer customer); 
 	

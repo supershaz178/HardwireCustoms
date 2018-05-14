@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -157,10 +158,25 @@ public class BuildDAOImpl implements BuildDao
 		
 		return buildByBuildStatus;
 	}
+	
+	@Override
+	public List<Build> searchByCustomerAndStaus(String buildStatus, Customer customer)
+	{
+		List<Build> builds = null; 
+		Criteria cr = getSession().createCriteria(Build.class); 
+		
+		Criterion state1 = Restrictions.eq("parts", buildStatus);
+		Criterion state2 = Restrictions.eq("customer", customer);
+		cr.add(Restrictions.and(state1, state2));
+		builds = cr.list(); 
+		
+		return builds;
+	}
 
 	@Override
 	public Session getSession()
 	{
 		return sessionFactory.getCurrentSession();
 	}
+
 }

@@ -23,4 +23,6 @@ public interface BuildDao extends BaseDao<Build>
 	public List<Build> searchByBuildType(String buildType);
 	
 	public List<Build> searchByStatus(String buildStatus); 
+	
+	public List<Build> searchByCustomerAndStaus(String buildStatus, Customer customer); 
 }

@@ -35,7 +35,7 @@ public abstract class Person implements Serializable {
 	private RoleReference role;
 	
 	@Column(name="SERIAL_NUM", nullable = false)
-	private Integer PersonNumber;
+	private Integer personNumber;
 	
 	@Column(name="CREATED_TIMESTAMP", nullable=false)
 	@Temporal(value = TemporalType.TIMESTAMP)
@@ -78,11 +78,11 @@ public abstract class Person implements Serializable {
 	}
 
 	public Integer getPersonNumber() {
-		return PersonNumber;
+		return personNumber;
 	}
 
 	public void setPersonNumber(Integer personNumber) {
-		PersonNumber = personNumber;
+		personNumber = personNumber;
 	}
 
 	public Date getCreatedTimestamp() {

@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 public class Parts implements Serializable  {
 
 	private static final long serialVersionUID = -335321033389944415L;
-	
+		
 	@Column(name="SERIAL_NUM", nullable=false)
 	private Integer serialNum; 
 	

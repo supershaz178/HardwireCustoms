@@ -12,7 +12,7 @@ public class Case extends Parts {
 	private static final long serialVersionUID = -1185373859891261173L;
 	
 	@Id
-	@Column(name = "ID", nullable = false)
+	@Column(name = "CASE_ID", nullable = false)
 	private Integer id; 
 	
 	@Column(name = "FORM_FACTOR", nullable=false)

@@ -12,7 +12,7 @@ public class SolidStateDrives extends Parts {
 	private static final long serialVersionUID = 5726104829110189217L;
 	
 	@Id
-	@Column(name="ID")
+	@Column(name="SSD_ID")
 	private Integer id; 
 	
 	@Column(name="FORM_FACTOR")

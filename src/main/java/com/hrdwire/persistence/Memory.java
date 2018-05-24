@@ -12,7 +12,7 @@ public class Memory extends Parts{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name="ID", nullable=false)
+	@Column(name="MEM_ID", nullable=false)
 	private Integer id;
 	
 	@Column(name="CAS_LATENCY")

@@ -17,7 +17,7 @@ public class CoolingDevice extends Parts
 	private static final long serialVersionUID = 312404231999136519L;
 	
 	@Id
-	@Column(name="ID", nullable=false)
+	@Column(name="COOL_DEV_ID", nullable=false)
 	private Integer Id; 
 	
 	@Column(name="FAN_RADIUS", nullable=false)

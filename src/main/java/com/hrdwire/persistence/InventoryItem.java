@@ -20,7 +20,7 @@ public class InventoryItem implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name="ID")
+	@Column(name="INV_ITEM_ID")
 	private Integer id; 
 
 	@Column(name="INVENTORY_ID")

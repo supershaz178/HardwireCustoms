@@ -23,7 +23,7 @@ public class Build implements Serializable
 	private static final long serialVersionUID = -9061274016370859776L;
 
 	@Id
-	@Column(name = "ID", nullable = false)
+	@Column(name = "BUILD_ID", nullable = false)
 	private Integer id;
 
 	@Column(name = "TOTAL_COST", nullable = false)

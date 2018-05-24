@@ -12,7 +12,7 @@ public class HardDrives extends Parts{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name="ID", nullable=false)
+	@Column(name="HRD_DRV_ID", nullable=false)
 	private Integer id; 
 	
 	@Column(name="CAPACITY", nullable=false)

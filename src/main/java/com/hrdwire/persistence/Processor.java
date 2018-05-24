@@ -13,7 +13,7 @@ public class Processor extends Parts {
 
 	private static final long serialVersionUID = -2479244058699750924L;
 	@Id
-	@Column(name="ID", nullable=false)
+	@Column(name="PROC_ID", nullable=false)
 	private Integer id;
 	
 	@Column(name="PROC_TYP")

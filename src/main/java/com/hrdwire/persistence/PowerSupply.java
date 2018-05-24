@@ -12,7 +12,7 @@ public class PowerSupply extends Parts {
 	private static final long serialVersionUID = -7796330632159619139L;
 	
 	@Id
-	@Column(name= "ID", nullable=false)
+	@Column(name= "PWR_SUP_ID", nullable=false)
 	private Integer id;
 	
 	@Column(name="TYPE", nullable=false)

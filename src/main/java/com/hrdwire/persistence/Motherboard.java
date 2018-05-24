@@ -15,7 +15,7 @@ public class Motherboard extends Parts{
 	private static final long serialVersionUID = 4119187399715489930L;
 	
 	@Id
-	@Column(name="ID", nullable=false)
+	@Column(name="MOTH_BRD_ID", nullable=false)
 	private Integer id;
 	
 	@Column(name="FORM_FACTOR", nullable=false)

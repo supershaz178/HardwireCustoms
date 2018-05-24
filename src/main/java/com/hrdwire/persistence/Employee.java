@@ -14,7 +14,7 @@ public class Employee extends Person implements Serializable {
 	private static final long serialVersionUID = -6663220101287137464L;
 	
 	@Id
-	@Column(name = "EMPLOYEE_ID", nullable= false)
+	@Column(name = "ID", nullable= false)
 	private Integer id; 
 	
 	@Column(name = "STATUS", nullable= false)

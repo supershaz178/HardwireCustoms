@@ -20,7 +20,7 @@ public class Inventory implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name="ID", nullable = false)
+	@Column(name="INV_ID", nullable = false)
 	private Integer id;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="ID")

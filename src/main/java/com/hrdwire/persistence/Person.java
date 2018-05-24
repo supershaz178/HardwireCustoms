@@ -82,7 +82,7 @@ public abstract class Person implements Serializable {
 	}
 
 	public void setPersonNumber(Integer personNumber) {
-		personNumber = personNumber;
+		this.personNumber = personNumber;
 	}
 
 	public Date getCreatedTimestamp() {

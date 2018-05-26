@@ -2,6 +2,7 @@ package com.hrdwire.dao;
 
 import java.util.List;
 
+import com.hrdwire.persistence.Build;
 import com.hrdwire.persistence.Employee;
 
 public interface EmployeeDao extends BaseDao<Employee>
@@ -12,7 +13,11 @@ public interface EmployeeDao extends BaseDao<Employee>
 
 	public Employee selectByPersonSerialNumber(Integer personNumber);
 	
-	public Employee seachByPhoneNumber(Integer phoneNumber);
+	public Employee selectByPhoneNumber(Integer phoneNumber);
+	
+	public Employee selectByCurrentBuild(Build currentBuild);
+	
+	public Employee selectByBuildsCompleted(Build buildCompleted);
 
 	public List<Employee> searchByFirstName(String firstName);
 

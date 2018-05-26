@@ -36,10 +36,16 @@ public class Build implements Serializable
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity=Customer.class, fetch=FetchType.LAZY)
 	private Customer customer;
 
+	@Column(name = "BULID_EMP")
+	private Employee builtByEmployee; 
+	
+	@Column(name = "COMPL_EMP")
+	private Employee completedByEmployee; 
+	
 	@Column(name = "BUILD_TYPE")
 	private String buildType;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "PARTS")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity=Parts.class)
 	private List<Parts> parts;
 
 	@Column(name = "STATUS", nullable = false)
@@ -154,6 +160,26 @@ public class Build implements Serializable
 	public void setParts(List<Parts> parts)
 	{
 		this.parts = parts;
+	}
+
+	public Employee getBuiltByEmployee()
+	{
+		return builtByEmployee;
+	}
+
+	public void setBuiltByEmployee(Employee builtByEmployee)
+	{
+		this.builtByEmployee = builtByEmployee;
+	}
+
+	public Employee getCompletedByEmployee()
+	{
+		return completedByEmployee;
+	}
+
+	public void setCompletedByEmployee(Employee completedByEmployee)
+	{
+		this.completedByEmployee = completedByEmployee;
 	}
 
 }

@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="HARD_DRIVES")
-public class HardDrives extends Parts{
+@Table(name="HARD_DRIVE")
+public class HardDrive extends Parts{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -27,7 +27,7 @@ public class HardDrives extends Parts{
 	@Column(name="FORM_FACTOR")
 	private Double formFactor;
 	
-	@Column(name="RPM, nullable=false")
+	@Column(name="RPM", nullable=false)
 	private Integer rpm;
 
 	public Integer getId() {

@@ -40,7 +40,7 @@ public class Processor extends Parts {
 	@Column(name="L2_CACHE")
 	private String cacheL2;
 	
-	@Column(name="L2_CACHE")
+	@Column(name="L3_CACHE")
 	private String cacheL3;
 	
 	@Column(name="MANUFACT_TECH")

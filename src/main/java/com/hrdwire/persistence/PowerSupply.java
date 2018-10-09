@@ -33,7 +33,7 @@ public class PowerSupply extends Parts {
 	@Column(name="EFFICENCY")
 	private Float efficency; 
 	
-	@Column(name="ENERGY_RATING")
+	@Column(name="ENERGY_RATING", nullable=false)
 	private String energyRating; 
 	
 	@Column(name="OVER_VOLT_PROTECT")

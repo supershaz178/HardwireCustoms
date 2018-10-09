@@ -9,7 +9,7 @@ public interface ProcessorDao extends BaseDao<Processor>
 {
 	public Processor selectByFullName(String fullName); 
 	
-	public List<Processor> searchByPatialName(String partialName);
+	public List<Processor> searchByPartialName(String partialName);
 	
 	public List<Processor> searchByProcessorType(String processorType); 
 	

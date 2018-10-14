@@ -24,7 +24,7 @@ public class HardDrive extends Parts{
 	@Column(name="INTERFACE_TYPE")
 	private String interfaceType;
 	
-	@Column(name="FORM_FACTOR")
+	@Column(name="FORM_FACTOR", nullable=false)
 	private Double formFactor;
 	
 	@Column(name="RPM", nullable=false)

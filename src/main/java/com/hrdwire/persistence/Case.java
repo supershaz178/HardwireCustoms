@@ -24,13 +24,13 @@ public class Case extends Parts {
 	@Column(name="NUM_5_BAYS")
 	private Integer numberOf5Supported;
 	
-	@Column(name="HEIGHT")
+	@Column(name="HEIGHT", nullable=false)
 	private Double height;
 	
-	@Column(name="LENGTH")
+	@Column(name="LENGTH", nullable=false)
 	private Double length;
 	
-	@Column(name="WIDTH")
+	@Column(name="WIDTH", nullable=false)
 	private Double width;
 	
 	@Column(name="WEIGHT")

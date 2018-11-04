@@ -1,6 +1,7 @@
 package com.hrdwire.persistence;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -32,7 +33,10 @@ public class Parts implements Serializable  {
 	
 	@Column(name="PART_TYPE")
 	private String partType;
-
+	
+	@Column(name="PRICE")
+	private BigDecimal price; 
+	
 	@Column(name="CREATED_TIMESTAMP", nullable=false)
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date createdTimestamp; 
@@ -87,6 +91,16 @@ public class Parts implements Serializable  {
 
 	public void setPartType(String partType) {
 		this.partType = partType;
+	}
+
+	public BigDecimal getPrice()
+	{
+		return price;
+	}
+
+	public void setPrice(BigDecimal price)
+	{
+		this.price = price;
 	} 
 	
 

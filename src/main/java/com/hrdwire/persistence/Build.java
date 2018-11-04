@@ -1,6 +1,7 @@
 package com.hrdwire.persistence;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class Build implements Serializable
 	private Integer id;
 
 	@Column(name = "TOTAL_COST", nullable = false)
-	private Double totalCost;
+	private BigDecimal totalCost;
 
 	@Column(name = "BUILD_NAME", length = 50)
 	private String buildName;
@@ -72,12 +73,12 @@ public class Build implements Serializable
 		this.id = id;
 	}
 
-	public Double getTotalCost()
+	public BigDecimal getTotalCost()
 	{
 		return totalCost;
 	}
 
-	public void setTotalCost(Double totalCost)
+	public void setTotalCost(BigDecimal totalCost)
 	{
 		this.totalCost = totalCost;
 	}

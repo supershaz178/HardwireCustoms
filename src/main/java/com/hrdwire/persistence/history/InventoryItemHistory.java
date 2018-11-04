@@ -1,4 +1,4 @@
-package com.hrdwire.persistence;
+package com.hrdwire.persistence.history;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,10 +12,14 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.hrdwire.persistence.Employee;
+import com.hrdwire.persistence.Inventory;
+import com.hrdwire.persistence.Parts;
+
 
 @Entity
-@Table(name = "INVENTORY_ITEM")
-public class InventoryItem implements Serializable{
+@Table(name = "INVENTORY_ITEM_HIST")
+public class InventoryItemHistory implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -42,11 +46,7 @@ public class InventoryItem implements Serializable{
 	@Column(name="CREATED_ON")
 	@Temporal(value= TemporalType.TIMESTAMP)
 	private Date createdOn;
-	
-	@Column(name="UPDATED_ON")
-	@Temporal(value= TemporalType.TIMESTAMP)
-	private Date updatedOn; 
-	
+		
 	public Integer getId() {
 		return id;
 	}
@@ -95,13 +95,4 @@ public class InventoryItem implements Serializable{
 	public void setPart(Parts part) {
 		this.part = part;
 	}
-	public Date getUpdatedOn()
-	{
-		return updatedOn;
-	}
-	public void setUpdatedOn(Date updatedOn)
-	{
-		this.updatedOn = updatedOn;
-	} 
-
 }

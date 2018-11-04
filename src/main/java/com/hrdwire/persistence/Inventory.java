@@ -33,7 +33,7 @@ public class Inventory implements Serializable{
 	@Column(name="CREATED_BY", nullable=false)
 	private Employee createBy; 
 	
-	@Column(name="REFERANCE_NUM")
+	@Column(name="REFERANCE_NUM", nullable=false)
 	private Integer refNum; 
 	
 	@Column(name = "TOT_NUM_PARTS")

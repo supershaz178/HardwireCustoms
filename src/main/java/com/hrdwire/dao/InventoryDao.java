@@ -16,5 +16,9 @@ public interface InventoryDao extends BaseDao<Inventory>{
 	public List<Inventory> searchByInventoryItem(InventoryItem item); 
 	
 	public Inventory selectByReferenceNumber(Integer refNumber); 
+	
+	public List<Inventory> searchByDateAndCreatedBy(Date createdOn, Employee createdBy); 
+	
+	public List<Inventory> searchByInventoryItemAndDate(InventoryItem item, Date createdOn); 
 
 }

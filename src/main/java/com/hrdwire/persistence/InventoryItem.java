@@ -39,7 +39,7 @@ public class InventoryItem implements Serializable{
 	@Column(name="CREATED_BY", nullable=false)
 	private Employee createdBy;
 	
-	@Column(name="CREATED_ON")
+	@Column(name="CREATED_ON", nullable=false)
 	@Temporal(value= TemporalType.TIMESTAMP)
 	private Date createdOn;
 	

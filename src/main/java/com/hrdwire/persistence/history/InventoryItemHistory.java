@@ -27,11 +27,11 @@ public class InventoryItemHistory implements Serializable{
 	@Column(name="INV_ITEM_ID")
 	private Integer id; 
 
-	@Column(name="INVENTORY_ID")
+	@Column(name="INVENTORY_ID", nullable=false)
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Inventory inventory; 
 	
-	@Column(name="PART_ID")
+	@Column(name="PART_ID", nullable = false)
 	private Parts part; 
 	
 	@Column(name="TOT_NUMBER_PART")

@@ -7,7 +7,6 @@ import javax.servlet.http.Part;
 
 import com.hrdwire.persistence.Employee;
 import com.hrdwire.persistence.Inventory;
-import com.hrdwire.persistence.InventoryItem;
 import com.hrdwire.persistence.history.InventoryItemHistory;
 
 public interface InventoryItemHistoryDao extends BaseDao<InventoryItemHistory>{

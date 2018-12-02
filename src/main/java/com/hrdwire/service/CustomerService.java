@@ -8,7 +8,11 @@ import com.hrdwire.persistence.Customer;
 
 public interface CustomerService extends BaseService<Customer>{
 	
-	public void assignCustNumber(Customer customer); 
+	public void assignCustNumber(Customer customer);
+	
+	public Customer createCustomerAccount();
+	
+	public Customer fetchCustByBuild(Build custBuild); 
 	
 	public Customer payForBuild(Customer customer); 
 	

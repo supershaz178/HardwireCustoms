@@ -13,5 +13,7 @@ public interface CoolingDeviceService extends BaseDao<CoolingDevice>
 	public List<CoolingDevice> determineCompatibility(CoolingDevice compatibleDevice); 
 	
 	public List<CoolingDevice> searchByParameters(HashMap<String,String> parameters); 
+	
+	public List<CoolingDevice> listAllCoolingDevices(); 
 
 }

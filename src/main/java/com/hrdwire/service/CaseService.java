@@ -6,7 +6,7 @@ import java.util.List;
 import com.hrdwire.dao.BaseDao;
 import com.hrdwire.persistence.Case;
 
-public interface CaseService extends BaseDao<Case>{
+public interface CaseService extends BaseService<Case>{
 	
 	public Case updateDimensions(Double height, Double width, Double length, Case updateDim); 
 		

@@ -7,7 +7,7 @@ import com.hrdwire.dao.BaseDao;
 import com.hrdwire.persistence.Build;
 import com.hrdwire.persistence.CoolingDevice;
 
-public interface CoolingDeviceService extends BaseDao<CoolingDevice>
+public interface CoolingDeviceService extends BaseService<CoolingDevice>
 {
 	public CoolingDevice updateCoolingDevice(CoolingDevice updateDevice); 
 	

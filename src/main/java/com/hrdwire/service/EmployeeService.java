@@ -8,7 +8,7 @@ import com.hrdwire.persistence.Build;
 import com.hrdwire.persistence.Customer;
 import com.hrdwire.persistence.Employee;
 
-public interface EmployeeService extends BaseDao<Employee> {
+public interface EmployeeService extends BaseService<Employee> {
 	
 	public Employee createEmployeeAccount(Employee newEmp); 
 	

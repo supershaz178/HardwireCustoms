@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.hrdwire.persistence.HardDrive;
 
-public interface HardDrivesDao extends BaseDao<HardDrive>
+public interface HardDriveDao extends BaseDao<HardDrive>
 {
 	public HardDrive selectByFullName(String hardDriveName);
 	

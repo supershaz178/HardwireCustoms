@@ -20,5 +20,5 @@ public interface HardDriveService extends BaseService<HardDrive>
 	
 	public Build removeHardDriveFromBuild(HardDrive rmDrive); 
 	
-
+	public List<HardDrive> listAllHardDrives();
 }

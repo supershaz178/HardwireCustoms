@@ -46,6 +46,10 @@ public class InventoryHistory implements Serializable{
 	@Column(name = "TOT_NUM_PARTS")
 	private Integer totalNumber;
 
+	@Column(name="TRNSFR_DATE")
+	@Temporal(value = TemporalType.DATE)
+	private Date recordTransferDate; 
+	
 	public Integer getId() {
 		return id;
 	}
@@ -104,6 +108,16 @@ public class InventoryHistory implements Serializable{
 	public void setInventoryItems(List<InventoryItem> inventoryItems)
 	{
 		this.inventoryItems = inventoryItems;
+	}
+
+	public Date getRecordTransferDate()
+	{
+		return recordTransferDate;
+	}
+
+	public void setRecordTransferDate(Date recordTransferDate)
+	{
+		this.recordTransferDate = recordTransferDate;
 	} 
 	
 }

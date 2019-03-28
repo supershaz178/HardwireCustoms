@@ -17,6 +17,8 @@ public interface InventoryHistoryDao extends BaseDao<InventoryHistory>{
 	
 	public InventoryHistory selectByReferenceNumber(Integer refNumber); 
 	
+	public Boolean insertTransferredRecords(List<InventoryHistory> transferRecords); 
+	
 	public List<InventoryHistory> searchByDateAndCreatedBy(Date createdOn, Employee createdBy); 
 	
 	public List<InventoryHistory> searchByInventoryItemAndDate(InventoryItem item, Date createdOn); 

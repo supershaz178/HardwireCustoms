@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="SSD")
-public class SolidStateDrives extends Parts {
+public class SolidStateDrive extends Parts {
 
 	private static final long serialVersionUID = 5726104829110189217L;
 	

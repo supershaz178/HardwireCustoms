@@ -3,7 +3,6 @@ package com.hrdwire.service;
 import java.util.HashMap;
 import java.util.List;
 
-import com.hrdwire.dao.BaseDao;
 import com.hrdwire.persistence.Build;
 import com.hrdwire.persistence.Customer;
 import com.hrdwire.persistence.Employee;

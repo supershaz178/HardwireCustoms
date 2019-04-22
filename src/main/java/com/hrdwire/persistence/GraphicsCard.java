@@ -22,10 +22,10 @@ public class GraphicsCard extends Parts {
 	private Integer cudaCores;
 	
 	@Column(name="CORE_CLK_SPD", nullable=false)
-	private Integer coreClockSpeed;
+	private Double coreClockSpeed;
 	
 	@Column(name="BST_CLK_SPD", nullable=false)
-	private Integer boostClockSpeed; 
+	private Double boostClockSpeed; 
 	
 	@Column(name="MEM_CLK")
 	private Integer memoryClock; 
@@ -93,19 +93,19 @@ public class GraphicsCard extends Parts {
 		this.cudaCores = cudaCores;
 	}
 
-	public Integer getCoreClockSpeed() {
+	public Double getCoreClockSpeed() {
 		return coreClockSpeed;
 	}
 
-	public void setCoreClockSpeed(Integer coreClockSpeed) {
+	public void setCoreClockSpeed(Double coreClockSpeed) {
 		this.coreClockSpeed = coreClockSpeed;
 	}
 
-	public Integer getBoostClockSpeed() {
+	public Double getBoostClockSpeed() {
 		return boostClockSpeed;
 	}
 
-	public void setBoostClockSpeed(Integer boostClockSpeed) {
+	public void setBoostClockSpeed(Double boostClockSpeed) {
 		this.boostClockSpeed = boostClockSpeed;
 	}
 

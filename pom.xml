@@ -41,18 +41,17 @@
 			<version>${spring.version}</version>
 		</dependency>  
 
-
 		 <dependency>
 			   <groupId>org.springframework</groupId>
 			   <artifactId>spring-orm</artifactId>
 			   <version>${spring.version}</version>
 		 </dependency>
+		 
 		 <dependency>
 			   <groupId>org.springframework</groupId>
 			   <artifactId>spring-jms</artifactId>
 			   <version>${spring.version}</version>
 		 </dependency>
-
 
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -72,7 +71,6 @@
 			<version>3.1.0</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -91,14 +89,19 @@
 				<version>${hibernate.core}</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.30</version>
 		</dependency>
 
-
+		<dependency>
+    		<groupId>com.h2database</groupId>
+    		<artifactId>h2</artifactId>
+    		<version>1.4.199</version>
+    		<scope>test</scope>
+		</dependency>
+		
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>jstl</artifactId>

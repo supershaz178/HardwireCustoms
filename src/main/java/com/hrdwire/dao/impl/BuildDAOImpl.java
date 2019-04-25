@@ -28,7 +28,7 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public void create(Build createObj)
 	{
-		Build build = (Build) createObj;
+		Build build = createObj;
 		getSession().save(build); 
 	}
 
@@ -36,7 +36,7 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public void delete(Build deleteObj)
 	{
-		Build build = (Build) deleteObj; 
+		Build build = deleteObj; 
 		getSession().delete(build);
 	}
 
@@ -44,7 +44,7 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public void update(Build updateObj)
 	{
-		Build build = (Build) updateObj; 
+		Build build = updateObj; 
 		getSession().saveOrUpdate(build);
 	}
 

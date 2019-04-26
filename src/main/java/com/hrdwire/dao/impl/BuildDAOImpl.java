@@ -16,27 +16,25 @@ import com.hrdwire.dao.BuildDao;
 import com.hrdwire.persistence.Build;
 import com.hrdwire.persistence.Customer;
 
+public class BuildDAOImpl implements BuildDao {
 
-public class BuildDAOImpl implements BuildDao
-{
-	
 	@Autowired
 	@Qualifier("sessionFactory")
-	private SessionFactory sessionFactory; 
+	private SessionFactory sessionFactory;
 
 	@Override
 	@Transactional
 	public void create(Build createObj)
 	{
 		Build build = createObj;
-		getSession().save(build); 
+		getSession().save(build);
 	}
 
 	@Override
 	@Transactional
 	public void delete(Build deleteObj)
 	{
-		Build build = deleteObj; 
+		Build build = deleteObj;
 		getSession().delete(build);
 	}
 
@@ -44,7 +42,7 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public void update(Build updateObj)
 	{
-		Build build = updateObj; 
+		Build build = updateObj;
 		getSession().saveOrUpdate(build);
 	}
 
@@ -52,19 +50,19 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public Build selectById(Integer id)
 	{
-		return (Build) getSession().get(Build.class, id); 
+		return (Build) getSession().get(Build.class, id);
 	}
 
 	@Override
 	@Transactional
 	public List<Build> searchByCustomer(Customer customer)
 	{
-		List<Build> buildsByCustomer = null; 
-		Criteria cr = getSession().createCriteria(Build.class); 
-		cr.add(Restrictions.eq("customer", customer)); 
-		
-		buildsByCustomer = cr.list(); 
-		
+		List<Build> buildsByCustomer = null;
+		Criteria cr = getSession().createCriteria(Build.class);
+		cr.add(Restrictions.eq("customer", customer));
+
+		buildsByCustomer = cr.list();
+
 		return buildsByCustomer;
 	}
 
@@ -72,12 +70,12 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public List<Build> searchByPatialBuildName(String partialName)
 	{
-		List<Build> buildsByPartialName = null; 
-		Criteria cr = getSession().createCriteria(Build.class); 
+		List<Build> buildsByPartialName = null;
+		Criteria cr = getSession().createCriteria(Build.class);
 		cr.add(Restrictions.ilike("buildName", partialName, MatchMode.ANYWHERE));
-		
-		buildsByPartialName = cr.list(); 
-		
+
+		buildsByPartialName = cr.list();
+
 		return buildsByPartialName;
 	}
 
@@ -85,12 +83,12 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public List<Build> searchByPartId(Integer partId)
 	{
-		List<Build> buildByPart = null; 
-		Criteria cr = getSession().createCriteria(Build.class); 
-		
+		List<Build> buildByPart = null;
+		Criteria cr = getSession().createCriteria(Build.class);
+
 		cr.add(Restrictions.eq("parts", partId));
-		buildByPart = cr.list(); 
-		
+		buildByPart = cr.list();
+
 		return buildByPart;
 	}
 
@@ -98,12 +96,12 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public Build selectBySerialNumber(Integer serialNumber)
 	{
-		Build buildBySerialNum = null; 
+		Build buildBySerialNum = null;
 		Criteria cr = getSession().createCriteria(Build.class);
-		
-		cr.add(Restrictions.eq("serialNum", serialNumber)); 
+
+		cr.add(Restrictions.eq("serialNum", serialNumber));
 		buildBySerialNum = (Build) cr.uniqueResult();
-		
+
 		return buildBySerialNum;
 	}
 
@@ -111,12 +109,12 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public Build selectByFullName(String fullBuildName)
 	{
-		Build buildsByFullName = null; 
-		Criteria cr = getSession().createCriteria(Build.class); 
+		Build buildsByFullName = null;
+		Criteria cr = getSession().createCriteria(Build.class);
 		cr.add(Restrictions.eq("buildName", fullBuildName));
-		
-		buildsByFullName = (Build) cr.uniqueResult(); 
-		
+
+		buildsByFullName = (Build) cr.uniqueResult();
+
 		return buildsByFullName;
 	}
 
@@ -124,12 +122,12 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public Build selectByTotalCost(Double totalCost)
 	{
-		Build buildsByTotalCost = null; 
-		Criteria cr = getSession().createCriteria(Build.class); 
+		Build buildsByTotalCost = null;
+		Criteria cr = getSession().createCriteria(Build.class);
 		cr.add(Restrictions.eq("buildName", totalCost));
-		
-		buildsByTotalCost = (Build) cr.uniqueResult(); 
-		
+
+		buildsByTotalCost = (Build) cr.uniqueResult();
+
 		return buildsByTotalCost;
 	}
 
@@ -137,12 +135,12 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public List<Build> searchByBuildType(String buildType)
 	{
-		List<Build> buildByBuildType = null; 
-		Criteria cr = getSession().createCriteria(Build.class); 
-		
+		List<Build> buildByBuildType = null;
+		Criteria cr = getSession().createCriteria(Build.class);
+
 		cr.add(Restrictions.eq("parts", buildType));
-		buildByBuildType = cr.list(); 
-		
+		buildByBuildType = cr.list();
+
 		return buildByBuildType;
 	}
 
@@ -150,26 +148,27 @@ public class BuildDAOImpl implements BuildDao
 	@Transactional
 	public List<Build> searchByStatus(String buildStatus)
 	{
-		List<Build> buildByBuildStatus = null; 
-		Criteria cr = getSession().createCriteria(Build.class); 
-		
+		List<Build> buildByBuildStatus = null;
+		Criteria cr = getSession().createCriteria(Build.class);
+
 		cr.add(Restrictions.eq("parts", buildStatus));
-		buildByBuildStatus = cr.list(); 
-		
+		buildByBuildStatus = cr.list();
+
 		return buildByBuildStatus;
 	}
-	
+
 	@Override
-	public List<Build> searchByCustomerAndStaus(String buildStatus, Customer customer)
+	public List<Build> searchByCustomerAndStaus(String buildStatus,
+			Customer customer)
 	{
-		List<Build> builds = null; 
-		Criteria cr = getSession().createCriteria(Build.class); 
-		
+		List<Build> builds = null;
+		Criteria cr = getSession().createCriteria(Build.class);
+
 		Criterion state1 = Restrictions.eq("parts", buildStatus);
 		Criterion state2 = Restrictions.eq("customer", customer);
 		cr.add(Restrictions.and(state1, state2));
-		builds = cr.list(); 
-		
+		builds = cr.list();
+
 		return builds;
 	}
 

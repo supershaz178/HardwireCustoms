@@ -21,84 +21,98 @@ import com.hrdwire.persistence.reference.RoleReference;
 public abstract class Person implements Serializable {
 
 	private static final long serialVersionUID = -7747668742245137756L;
-	
-	@Column(name="FIRST_NAME", length=20)
-	private String firstName;
-	
-	@Column(name="LAST_NAME", length=20)
-	private String lastName;
-	
-	@Column(name="PHONE_NUM", length=12)
-	private Integer phoneNumber; 
-	
-	@Column(name="ROLE_ID")
-	private RoleReference role;
-	
-	@Column(name="SERIAL_NUM", nullable = false)
-	private Integer personNumber;
-	
-	@Column(name="CREATED_TIMESTAMP", nullable=false)
-	@Temporal(value = TemporalType.TIMESTAMP)
-	private Date createdTimestamp; 
-	
-	@Column(name="UPDATE_TIMESTAMP")
-	@Temporal(value = TemporalType.TIMESTAMP)
-	private Date updatedTimestamp; 
 
-	public String getFirstName() {
+	@Column(name = "FIRST_NAME", length = 20)
+	private String firstName;
+
+	@Column(name = "LAST_NAME", length = 20)
+	private String lastName;
+
+	@Column(name = "PHONE_NUM", length = 12)
+	private Integer phoneNumber;
+
+	@Column(name = "ROLE_ID")
+	private RoleReference role;
+
+	@Column(name = "SERIAL_NUM", nullable = false)
+	private Integer personNumber;
+
+	@Column(name = "CREATED_TIMESTAMP", nullable = false)
+	@Temporal(value = TemporalType.TIMESTAMP)
+	private Date createdTimestamp;
+
+	@Column(name = "UPDATE_TIMESTAMP")
+	@Temporal(value = TemporalType.TIMESTAMP)
+	private Date updatedTimestamp;
+
+	public String getFirstName()
+	{
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public void setFirstName(String firstName)
+	{
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
+	public String getLastName()
+	{
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLastName(String lastName)
+	{
 		this.lastName = lastName;
 	}
 
-	public Integer getPhoneNumber() {
+	public Integer getPhoneNumber()
+	{
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(Integer phoneNumber)
+	{
 		this.phoneNumber = phoneNumber;
 	}
 
-	public RoleReference getRoleId() {
+	public RoleReference getRoleId()
+	{
 		return role;
 	}
 
-	public void setRoleId(RoleReference roleId) {
+	public void setRoleId(RoleReference roleId)
+	{
 		this.role = roleId;
 	}
 
-	public Integer getPersonNumber() {
+	public Integer getPersonNumber()
+	{
 		return personNumber;
 	}
 
-	public void setPersonNumber(Integer personNumber) {
+	public void setPersonNumber(Integer personNumber)
+	{
 		this.personNumber = personNumber;
 	}
 
-	public Date getCreatedTimestamp() {
+	public Date getCreatedTimestamp()
+	{
 		return createdTimestamp;
 	}
 
-	public void setCreatedTimestamp(Date createdTimestamp) {
+	public void setCreatedTimestamp(Date createdTimestamp)
+	{
 		this.createdTimestamp = createdTimestamp;
 	}
 
-	public Date getUpdatedTimestamp() {
+	public Date getUpdatedTimestamp()
+	{
 		return updatedTimestamp;
 	}
 
-	public void setUpdatedTimestamp(Date updatedTimestamp) {
+	public void setUpdatedTimestamp(Date updatedTimestamp)
+	{
 		this.updatedTimestamp = updatedTimestamp;
-	} 
+	}
 
 }

@@ -16,39 +16,45 @@ import javax.persistence.Table;
 public class Customer extends Person implements Serializable {
 
 	private static final long serialVersionUID = -7261855465348375028L;
-	
+
 	@Id
-	@Column(name="CUST_ID", nullable = false)
-	private Integer custId; 
-	
-	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="BUILD")
+	@Column(name = "CUST_ID", nullable = false)
+	private Integer custId;
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "BUILD")
 	private List<Build> builds;
-	
-	@Column(name="SATIS")
+
+	@Column(name = "SATIS")
 	private String satisfaction;
 
-	public Integer getCustId() {
+	public Integer getCustId()
+	{
 		return custId;
 	}
 
-	public void setCustId(Integer custId) {
+	public void setCustId(Integer custId)
+	{
 		this.custId = custId;
 	}
 
-	public List<Build> getBuilds() {
+	public List<Build> getBuilds()
+	{
 		return builds;
 	}
 
-	public void setBuilds(List<Build> builds) {
+	public void setBuilds(List<Build> builds)
+	{
 		this.builds = builds;
 	}
 
-	public String getSatisfaction() {
+	public String getSatisfaction()
+	{
 		return satisfaction;
 	}
 
-	public void setSatisfaction(String satisfaction) {
+	public void setSatisfaction(String satisfaction)
+	{
 		this.satisfaction = satisfaction;
-	} 
+	}
 
 }

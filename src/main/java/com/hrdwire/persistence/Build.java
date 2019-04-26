@@ -18,8 +18,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "BUILD")
-public class Build implements Serializable
-{
+public class Build implements Serializable {
 
 	private static final long serialVersionUID = -9061274016370859776L;
 
@@ -34,19 +33,19 @@ public class Build implements Serializable
 	private String buildName;
 
 	@Column(name = "CUSTOMER_ID", nullable = false)
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity=Customer.class, fetch=FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Customer.class, fetch = FetchType.LAZY)
 	private Customer customer;
 
 	@Column(name = "BULID_EMP")
-	private Employee builtByEmployee; 
-	
+	private Employee builtByEmployee;
+
 	@Column(name = "COMPL_EMP")
-	private Employee completedByEmployee; 
-	
+	private Employee completedByEmployee;
+
 	@Column(name = "BUILD_TYPE")
 	private String buildType;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity=Parts.class)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Parts.class)
 	private List<Parts> parts;
 
 	@Column(name = "STATUS", nullable = false)

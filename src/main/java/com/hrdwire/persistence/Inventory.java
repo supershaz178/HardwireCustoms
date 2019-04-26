@@ -14,77 +14,89 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="INVENTORY")
-public class Inventory implements Serializable{
+@Table(name = "INVENTORY")
+public class Inventory implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@Column(name="INV_ID", nullable = false)
-	private Integer id;
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy="ID")
-	private List<InventoryItem> inventoryItems; 
-	
-	@Column(name = "DATE_CREATED", nullable= false)
-	@Temporal(value = TemporalType.TIMESTAMP)
-	private Date dateCreated; 
 
-	@Column(name="CREATED_BY", nullable=false)
-	private Employee createBy; 
-	
-	@Column(name="REFERANCE_NUM", nullable=false)
-	private Integer refNum; 
-	
+	@Id
+	@Column(name = "INV_ID", nullable = false)
+	private Integer id;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "ID")
+	private List<InventoryItem> inventoryItems;
+
+	@Column(name = "DATE_CREATED", nullable = false)
+	@Temporal(value = TemporalType.TIMESTAMP)
+	private Date dateCreated;
+
+	@Column(name = "CREATED_BY", nullable = false)
+	private Employee createBy;
+
+	@Column(name = "REFERANCE_NUM", nullable = false)
+	private Integer refNum;
+
 	@Column(name = "TOT_NUM_PARTS")
 	private Integer totalNumber;
 
-	public Integer getId() {
+	public Integer getId()
+	{
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Integer id)
+	{
 		this.id = id;
 	}
 
-	public Date getDateCreated() {
+	public Date getDateCreated()
+	{
 		return dateCreated;
 	}
 
-	public void setDateCreated(Date dateCreated) {
+	public void setDateCreated(Date dateCreated)
+	{
 		this.dateCreated = dateCreated;
 	}
 
-	public Employee getCreateBy() {
+	public Employee getCreateBy()
+	{
 		return createBy;
 	}
 
-	public void setCreateBy(Employee createBy) {
+	public void setCreateBy(Employee createBy)
+	{
 		this.createBy = createBy;
 	}
 
-	public Integer getRefNum() {
+	public Integer getRefNum()
+	{
 		return refNum;
 	}
 
-	public void setRefNum(Integer refNum) {
+	public void setRefNum(Integer refNum)
+	{
 		this.refNum = refNum;
 	}
 
-	public Integer getTotalNumber() {
+	public Integer getTotalNumber()
+	{
 		return totalNumber;
 	}
 
-	public void setTotalNumber(Integer totalNumber) {
+	public void setTotalNumber(Integer totalNumber)
+	{
 		this.totalNumber = totalNumber;
 	}
 
-	public List<InventoryItem> getInventoryItems() {
+	public List<InventoryItem> getInventoryItems()
+	{
 		return inventoryItems;
 	}
 
-	public void setInventoryItems(List<InventoryItem> inventoryItems) {
+	public void setInventoryItems(List<InventoryItem> inventoryItems)
+	{
 		this.inventoryItems = inventoryItems;
-	} 
-	
+	}
+
 }

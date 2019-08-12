@@ -17,76 +17,85 @@ import com.hrdwire.persistence.Employee;
 import com.hrdwire.persistence.InventoryItem;
 
 @Entity
-@Table(name="INVENTORY_HIST")
-public class InventoryHistory implements Serializable{
+@Table(name = "INVENTORY_HIST")
+public class InventoryHistory implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@Column(name="INV_ID", nullable = false)
+	@Column(name = "INV_ID", nullable = false)
 	private Integer id;
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy="ID")
-	private List<InventoryItemHistory> histInventoryItems; 
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy="ID")
-	private List<InventoryItem> inventoryItems; 
 
-	
-	@Column(name = "DATE_CREATED", nullable= false)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "ID")
+	private List<InventoryItemHistory> histInventoryItems;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "ID")
+	private List<InventoryItem> inventoryItems;
+
+	@Column(name = "DATE_CREATED", nullable = false)
 	@Temporal(value = TemporalType.TIMESTAMP)
-	private Date dateCreated; 
+	private Date dateCreated;
 
-	@Column(name="CREATED_BY", nullable=false)
-	private Employee createBy; 
-	
-	@Column(name="REFERANCE_NUM")
-	private Integer refNum; 
-	
+	@Column(name = "CREATED_BY", nullable = false)
+	private Employee createBy;
+
+	@Column(name = "REFERANCE_NUM")
+	private Integer refNum;
+
 	@Column(name = "TOT_NUM_PARTS")
 	private Integer totalNumber;
 
-	@Column(name="TRNSFR_DATE")
+	@Column(name = "TRNSFR_DATE")
 	@Temporal(value = TemporalType.DATE)
-	private Date recordTransferDate; 
-	
-	public Integer getId() {
+	private Date recordTransferDate;
+
+	public Integer getId()
+	{
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Integer id)
+	{
 		this.id = id;
 	}
 
-	public Date getDateCreated() {
+	public Date getDateCreated()
+	{
 		return dateCreated;
 	}
 
-	public void setDateCreated(Date dateCreated) {
+	public void setDateCreated(Date dateCreated)
+	{
 		this.dateCreated = dateCreated;
 	}
 
-	public Employee getCreateBy() {
+	public Employee getCreateBy()
+	{
 		return createBy;
 	}
 
-	public void setCreateBy(Employee createBy) {
+	public void setCreateBy(Employee createBy)
+	{
 		this.createBy = createBy;
 	}
 
-	public Integer getRefNum() {
+	public Integer getRefNum()
+	{
 		return refNum;
 	}
 
-	public void setRefNum(Integer refNum) {
+	public void setRefNum(Integer refNum)
+	{
 		this.refNum = refNum;
 	}
 
-	public Integer getTotalNumber() {
+	public Integer getTotalNumber()
+	{
 		return totalNumber;
 	}
 
-	public void setTotalNumber(Integer totalNumber) {
+	public void setTotalNumber(Integer totalNumber)
+	{
 		this.totalNumber = totalNumber;
 	}
 
@@ -95,7 +104,8 @@ public class InventoryHistory implements Serializable{
 		return histInventoryItems;
 	}
 
-	public void setHistInventoryItems(List<InventoryItemHistory> histInventoryItems)
+	public void setHistInventoryItems(
+			List<InventoryItemHistory> histInventoryItems)
 	{
 		this.histInventoryItems = histInventoryItems;
 	}
@@ -118,6 +128,6 @@ public class InventoryHistory implements Serializable{
 	public void setRecordTransferDate(Date recordTransferDate)
 	{
 		this.recordTransferDate = recordTransferDate;
-	} 
-	
+	}
+
 }

@@ -8,43 +8,49 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ROLE_REF")
+@Table(name = "ROLE_REF")
 public class RoleReference implements Serializable {
 
 	private static final long serialVersionUID = -5418202211387660365L;
-	
+
 	@Id
-	@Column(name="ID", nullable=false)
-	private Integer id; 
-	
-	@Column(name="ROLE", nullable=false)
-	private String role; 
-	
-	@Column(name="ROLE_DESC")
+	@Column(name = "ID", nullable = false)
+	private Integer id;
+
+	@Column(name = "ROLE", nullable = false)
+	private String role;
+
+	@Column(name = "ROLE_DESC")
 	private String roleDescription;
 
-	public Integer getId() {
+	public Integer getId()
+	{
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Integer id)
+	{
 		this.id = id;
 	}
 
-	public String getRole() {
+	public String getRole()
+	{
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(String role)
+	{
 		this.role = role;
 	}
 
-	public String getRoleDescription() {
+	public String getRoleDescription()
+	{
 		return roleDescription;
 	}
 
-	public void setRoleDescription(String roleDescription) {
+	public void setRoleDescription(String roleDescription)
+	{
 		this.roleDescription = roleDescription;
-	} 
-	
+	}
+
 }

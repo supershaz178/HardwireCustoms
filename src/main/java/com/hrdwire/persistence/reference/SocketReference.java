@@ -11,125 +11,145 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="SOCKET_REF")
+@Table(name = "SOCKET_REF")
 public class SocketReference implements Serializable {
 
 	private static final long serialVersionUID = -7064819027333204483L;
-	
+
 	@Id
-	@Column(name="ID")
+	@Column(name = "ID")
 	private Integer id;
-	
-	@Column(name="SOCKET_TYPE", nullable=false)
-	private String socketType; 
-	
-	@Column(name="COMP_COMPATIBILITY", nullable=false)
-	private String computerCompatibilty; 
-	
-	@Column(name="COMPANY")
+
+	@Column(name = "SOCKET_TYPE", nullable = false)
+	private String socketType;
+
+	@Column(name = "COMP_COMPATIBILITY", nullable = false)
+	private String computerCompatibilty;
+
+	@Column(name = "COMPANY")
 	private String company;
-	
-	@Column(name="SOCKET_STAND")
+
+	@Column(name = "SOCKET_STAND")
 	private String socketStandard;
-	
-	@Column(name="ZIF")
+
+	@Column(name = "ZIF")
 	private boolean zif;
-	
-	@Column(name="YEAR_RELEASED", length=5)
+
+	@Column(name = "YEAR_RELEASED", length = 5)
 	private Integer yearReleased;
-	
-	@Column(name="CREATED_ON", nullable=false)
+
+	@Column(name = "CREATED_ON", nullable = false)
 	@Temporal(value = TemporalType.TIMESTAMP)
-	private Date createdOn; 
-	
-	@Column(name="UPDATE_ON", nullable=false)
+	private Date createdOn;
+
+	@Column(name = "UPDATE_ON", nullable = false)
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date updatedOn;
-	
-	@Column(name="CREATED_BY", nullable=false)
-	private String createdBy; 
-	
-	@Column(name="UPDATED_BY", nullable=false)
+
+	@Column(name = "CREATED_BY", nullable = false)
+	private String createdBy;
+
+	@Column(name = "UPDATED_BY", nullable = false)
 	private String updatedBy;
 
-	public Integer getId() {
+	public Integer getId()
+	{
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Integer id)
+	{
 		this.id = id;
 	}
 
-	public String getSocketType() {
+	public String getSocketType()
+	{
 		return socketType;
 	}
 
-	public void setSocketType(String socketType) {
+	public void setSocketType(String socketType)
+	{
 		this.socketType = socketType;
 	}
 
-	public String getComputerCompatibilty() {
+	public String getComputerCompatibilty()
+	{
 		return computerCompatibilty;
 	}
 
-	public void setComputerCompatibilty(String computerCompatibilty) {
+	public void setComputerCompatibilty(String computerCompatibilty)
+	{
 		this.computerCompatibilty = computerCompatibilty;
 	}
 
-	public String getCompany() {
+	public String getCompany()
+	{
 		return company;
 	}
 
-	public void setCompany(String company) {
+	public void setCompany(String company)
+	{
 		this.company = company;
 	}
 
-	public String getSocketStandard() {
+	public String getSocketStandard()
+	{
 		return socketStandard;
 	}
 
-	public void setSocketStandard(String socketStandard) {
+	public void setSocketStandard(String socketStandard)
+	{
 		this.socketStandard = socketStandard;
 	}
 
-	public boolean isZif() {
+	public boolean isZif()
+	{
 		return zif;
 	}
 
-	public void setZif(boolean zif) {
+	public void setZif(boolean zif)
+	{
 		this.zif = zif;
 	}
 
-	public Date getCreatedOn() {
+	public Date getCreatedOn()
+	{
 		return createdOn;
 	}
 
-	public void setCreatedOn(Date createdOn) {
+	public void setCreatedOn(Date createdOn)
+	{
 		this.createdOn = createdOn;
 	}
 
-	public Date getUpdatedOn() {
+	public Date getUpdatedOn()
+	{
 		return updatedOn;
 	}
 
-	public void setUpdatedOn(Date updatedOn) {
+	public void setUpdatedOn(Date updatedOn)
+	{
 		this.updatedOn = updatedOn;
 	}
 
-	public String getCreatedBy() {
+	public String getCreatedBy()
+	{
 		return createdBy;
 	}
 
-	public void setCreatedBy(String createdBy) {
+	public void setCreatedBy(String createdBy)
+	{
 		this.createdBy = createdBy;
 	}
 
-	public String getUpdatedBy() {
+	public String getUpdatedBy()
+	{
 		return updatedBy;
 	}
 
-	public void setUpdatedBy(String updatedBy) {
+	public void setUpdatedBy(String updatedBy)
+	{
 		this.updatedBy = updatedBy;
-	} 
+	}
 
 }

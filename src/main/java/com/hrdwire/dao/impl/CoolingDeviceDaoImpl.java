@@ -50,7 +50,6 @@ public class CoolingDeviceDaoImpl implements CoolingDeviceDao {
 	}
 
 	@Override
-	@Transactional
 	public Session getSession()
 	{
 		return sessionFactory.getCurrentSession(); 

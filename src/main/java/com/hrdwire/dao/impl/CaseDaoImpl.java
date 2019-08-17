@@ -50,7 +50,6 @@ public class CaseDaoImpl implements CaseDao {
 	}
 
 	@Override
-	@Transactional
 	public Session getSession()
 	{
 		return sessionFactory.getCurrentSession(); 

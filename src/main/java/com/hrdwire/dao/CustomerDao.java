@@ -12,12 +12,14 @@ public interface CustomerDao extends BaseDao<Customer> {
 
 	public Customer selectCustomerByBuild(Build build);
 
-	public List<Customer> selectCustomerByPhoneNumber(Integer phoneNum);
+	public Customer selectCustomerByPhoneNumber(Integer phoneNum);
 
 	public List<Customer> searchCustomerByRole(RoleReference role);
 
 	public List<Customer> searchCustomerByFirstName(String firstName);
 
 	public List<Customer> searchCustomerByLastName(String lastName);
+	
+	public List<Customer> searchCustomerByFullName(String firstName, String lastName); 
 
 }

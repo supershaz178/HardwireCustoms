@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -37,9 +38,11 @@ public class Build implements Serializable {
 	private Customer customer;
 
 	@Column(name = "BULID_EMP")
+	@JoinColumn(name = "id")
 	private Employee builtByEmployee;
 
 	@Column(name = "COMPL_EMP")
+	@JoinColumn(name = "id")
 	private Employee completedByEmployee;
 
 	@Column(name = "BUILD_TYPE")

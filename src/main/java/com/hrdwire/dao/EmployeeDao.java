@@ -15,10 +15,6 @@ public interface EmployeeDao extends BaseDao<Employee> {
 
 	public Employee selectByPhoneNumber(Integer phoneNumber);
 
-	public Employee selectByCurrentBuild(Build currentBuild);
-
-	public Employee selectByBuildsCompleted(Build buildCompleted);
-
 	public List<Employee> searchByFirstName(String firstName);
 
 	public List<Employee> searchByLastName(String lastName);

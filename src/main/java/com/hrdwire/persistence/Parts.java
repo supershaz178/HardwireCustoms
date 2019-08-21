@@ -19,13 +19,13 @@ public class Parts implements Serializable {
 	@Column(name = "SERIAL_NUM", nullable = false)
 	private Integer serialNum;
 
-	@Column(name = "BRAND")
+	@Column(name = "BRAND", nullable=false)
 	private String brand;
 
-	@Column(name = "SERIES")
+	@Column(name = "SERIES", nullable=false)
 	private String series;
 
-	@Column(name = "NAME")
+	@Column(name = "NAME", nullable=false)
 	private String name;
 
 	@Column(name = "RATING")
